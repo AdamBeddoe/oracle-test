@@ -36,7 +36,7 @@ Throws an `InvalidCurrencyException` if any value is negative.
 Deposit a coin into the vending machine; adding the coin to the float.
 
 
-####Design Notes:
+#### Design Notes:
 - Assuming that checking of the coins being valid (not zero or negative) is done elsewhere by the vending machine, this may or
 may not be worth checking here too depending on the reliability of the API user
 
@@ -49,7 +49,7 @@ Calculate the change to return to the user that sums to the `changeValue`, retur
 Throws a `NotEnoughChangeException` if the total cannot be made with the current coins, or an `InvalidCurrencyException` if the
 total is not positive.
 
-####Design Notes:
+#### Design Notes:
 - If performance was an issue, throwing an exception might be inappropriate for the case of not enough change, since it may be
 a common operation and throwing exceptions is much slower than returning a value. However, I thought it was a clearer way of 
 indicating the error.
@@ -69,3 +69,4 @@ the vending machine would need this and it would add to the code base that requi
 addition in future if the requirement arose.
 - Unsure exactly what was meant by an interactive test harness, so built the simple console application that can be seen when
 running the jar, along with unit tests as I was developing
+- Tried to keep the API limited to tracking change as was specified, rather than, for example, making sure the user had deposited enough coins to accept the item after change was requested
